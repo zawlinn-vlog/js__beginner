@@ -1,32 +1,32 @@
 //
+/*
+function Person(name, birthDate) {
+  this.name = name;
+  this.birthDate = birthDate;
+}
 
-// function Person(name, birthDate) {
-//   this.name = name;
-//   this.birthDate = birthDate;
-// }
+Person.prototype.getAge = function () {
+  return `${this.name} is ${2025 - this.birthDate} year old.`;
+};
 
-// Person.prototype.getAge = function () {
-//   return `${this.name} is ${2025 - this.birthDate} year old.`;
-// };
+Person.prototype.getBirthday = function () {
+  return `${this.name}'s birth Year is ${this.birthDate}.`;
+};
 
-// Person.prototype.getBirthday = function () {
-//   return `${this.name}'s birth Year is ${this.birthDate}.`;
-// };
+function American(name, birthDate, location = "New Jercy") {
+  Person.call(this, name, birthDate);
+  this.location = location;
+}
 
-// function American(name, birthDate, location = "New Jercy") {
-//   Person.call(this, name, birthDate);
-//   this.location = location;
-// }
+American.prototype = Object.create(Person.prototype); // Create Prototype
 
-// American.prototype = Object.create(Person.prototype); // Create Prototype
+const p1 = new Person("Zaw Linn", 1997);
 
-// const p1 = new Person("Zaw Linn", 1997);
+const m1 = new American("John Ibrahim", 1991, "New York");
 
-// const m1 = new American("John Ibrahim", 1991, "New York");
+console.log(p1, p1.getAge());
 
-// console.log(p1, p1.getAge());
-
-// console.log(m1, m1.getAge(), m1.getBirthday());
+console.log(m1, m1.getAge(), m1.getBirthday());
 
 class Person {
   static job = "Jobless";
@@ -51,6 +51,8 @@ console.log(p1, p1.getAge());
 
 console.log(Person.getJob());
 
+*/
+
 /**
  *
  * Ready State
@@ -73,6 +75,7 @@ console.log(Person.getJob());
 
 const url = "https://jsonplaceholder.typicode.com/posts";
 
+/*
 const xml = new XMLHttpRequest();
 
 xml.onreadystatechange = function () {
@@ -111,3 +114,42 @@ xml.onreadystatechange = function () {
 xml.open("GET", url);
 
 xml.send();
+
+
+
+
+const xml = new XMLHttpRequest();
+
+xml.onload = function () {
+  console.log(this);
+
+  if (this.status == 200 && this.readyState == 4) {
+    console.log(this.responseText);
+  }
+};
+
+xml.open("GET", url);
+
+xml.send();
+
+*/
+
+function loadData() {
+  const xml = new XMLHttpRequest();
+
+  return new Promise((res, rej) => {
+    xml.onload = function () {
+      if (this.status == 200) {
+        res(JSON.parse(this.responseText));
+      } else {
+        rej(err);
+      }
+    };
+
+    xml.open("GET", url);
+
+    xml.send();
+  });
+}
+
+loadData().then((val) => console.log(val));
