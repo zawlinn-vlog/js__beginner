@@ -155,7 +155,6 @@ function loadData() {
 loadData().then((val) => console.log(val));
 
 
-*/
 
 async function loadData() {
   const xml = new XMLHttpRequest();
@@ -179,3 +178,73 @@ async function loadData() {
 }
 
 loadData().then((val) => console.log(val));
+
+
+
+
+function loadData() {
+  return new Promise((res, rej) => {
+    fetch(url)
+      .then((val) => val.json())
+      .then((json) => res(json))
+      .catch((err) => rej(err));
+  });
+}
+
+// loadData().then((val) => console.log(val));
+
+async function init() {
+  const finalJson = await loadData();
+  console.log(finalJson);
+}
+
+init();
+
+
+
+let data;
+
+try {
+  function loadData() {
+    const xml = new XMLHttpRequest();
+
+    xml.onload = function () {
+      if (this.status == 200 && this.readyState == 4) {
+        data = JSON.parse(this.responseText);
+
+        console.log(data);
+      }
+    };
+
+    xml.open("GET", url);
+
+    xml.send();
+  }
+
+  loadData();
+} catch (err) {
+  console.log(err);
+} finally {
+  console.log("Load Data Process is finished!");
+}
+
+*/
+
+let data;
+
+function loadData() {
+  return new Promise((res, rej) => {
+    fetch(url)
+      .then((pro) => pro.json())
+      .then((val) => res(val))
+      .catch((err) => rej(err));
+  });
+}
+
+async function init() {
+  data = await loadData();
+
+  console.log(data);
+}
+
+init();
