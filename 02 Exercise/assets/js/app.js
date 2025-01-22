@@ -132,7 +132,7 @@ xml.open("GET", url);
 
 xml.send();
 
-*/
+
 
 function loadData() {
   const xml = new XMLHttpRequest();
@@ -150,6 +150,32 @@ function loadData() {
 
     xml.send();
   });
+}
+
+loadData().then((val) => console.log(val));
+
+
+*/
+
+async function loadData() {
+  const xml = new XMLHttpRequest();
+
+  const getData = new Promise((res, rej) => {
+    xml.onload = function () {
+      if (this.status == 200) {
+        res(JSON.parse(this.responseText));
+      } else {
+        rej(err);
+      }
+    };
+    xml.open("GET", url);
+
+    xml.send();
+  });
+
+  const json = await getData;
+
+  return json;
 }
 
 loadData().then((val) => console.log(val));
