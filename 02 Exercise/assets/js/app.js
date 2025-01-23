@@ -242,6 +242,8 @@ function loadData() {
 }
 
 async function init() {
+  // catch promise value
+
   data = await loadData();
 
   console.log(data);
