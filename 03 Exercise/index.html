@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- BOOTSTRAP -->
+
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-5 mx-auto">
+          <!-- was-validated -->
+          <form action="get" class="form need-validation">
+            <div class="row gap-4">
+              <!--  -->
+              <div class="form-group">
+                <label for="username" class="form-label">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Username"
+                  required
+                />
+                <div class="form-text">Type username in Here &mdash;</div>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">
+                  username must not be captical and space between them!
+                </div>
+              </div>
+
+              <!--  -->
+              <div class="row pe-0">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="firstName" class="from-label">First Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName"
+                      placeholder="First Name"
+                      required
+                    />
+                    <div class="form-text">put your first name!</div>
+                    <div class="valid-feedback">Look Good!</div>
+                    <div class="invalid-feedback">You must fill this field</div>
+                  </div>
+                </div>
+                <div class="col-6 pe-0">
+                  <div class="form-group">
+                    <label for="lastName" class="from-label">Last Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Last Name"
+                      id="lastName"
+                      required
+                    />
+                    <div class="form-text">put your last name!</div>
+                    <div class="valid-feedback">Look Good!</div>
+                    <div class="invalid-feedback">You must fill this field</div>
+                  </div>
+                </div>
+              </div>
+
+              <!--  -->
+
+              <div class="form-group">
+                <label for="pass" class="form-label">Password</label>
+              </div>
+
+              <!--  -->
+              <div class="form-group">
+                <label for="selectCountry" class="form-label"
+                  >Select Your Country</label
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
