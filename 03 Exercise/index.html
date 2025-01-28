@@ -17,21 +17,16 @@
       <div class="row">
         <div class="col-5 mx-auto">
           <!-- was-validated -->
-          <form action="get" class="form need-validation">
+          <form action="get" class="form need-validation" spellcheck="false">
             <div class="row gap-4">
               <!--  -->
               <div class="form-group">
                 <label for="username" class="form-label">Username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Username"
-                  required
-                />
-                <div class="form-text">Type username in Here &mdash;</div>
+                <input type="text" class="form-control" required />
+                <!-- <div class="form-text">Type username in Here &mdash;</div> -->
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">
-                  username must not be captical and space between them!
+                  Username must not be captical and space between them!
                 </div>
               </div>
 
@@ -44,10 +39,9 @@
                       type="text"
                       class="form-control"
                       id="firstName"
-                      placeholder="First Name"
                       required
                     />
-                    <div class="form-text">put your first name!</div>
+                    <!-- <div class="form-text">put your first name!</div> -->
                     <div class="valid-feedback">Look Good!</div>
                     <div class="invalid-feedback">You must fill this field</div>
                   </div>
@@ -58,11 +52,10 @@
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Last Name"
                       id="lastName"
                       required
                     />
-                    <div class="form-text">put your last name!</div>
+                    <!-- <div class="form-text">put your last name!</div> -->
                     <div class="valid-feedback">Look Good!</div>
                     <div class="invalid-feedback">You must fill this field</div>
                   </div>
@@ -71,8 +64,58 @@
 
               <!--  -->
 
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="pass" class="form-label">Password</label>
+                    <input
+                      type="password"
+                      name=""
+                      id="pass"
+                      class="form-control"
+                      required
+                    />
+                    <!-- <div class="form-text">put your password!</div> -->
+                    <div class="valid-feedback">Look Good!</div>
+                    <div class="invalid-feedback">
+                      You must be defined your password at least 8 words
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="cpass" class="form-label"
+                      >Comfirm Password</label
+                    >
+                    <input
+                      type="password"
+                      name=""
+                      id="cpass"
+                      class="form-control"
+                      required
+                    />
+                    <!-- <div class="form-text">put your password!</div> -->
+                    <div class="valid-feedback">Look Good!</div>
+                    <div class="invalid-feedback">
+                      You must be defined your password at least 8 words
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--  -->
+
               <div class="form-group">
-                <label for="pass" class="form-label">Password</label>
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  name=""
+                  id="email"
+                  class="form-control"
+                  required
+                />
+                <div class="valid-feedback">Look Good!</div>
+                <div class="invalid-feedback">You must fill this field!</div>
               </div>
 
               <!--  -->
@@ -80,11 +123,44 @@
                 <label for="selectCountry" class="form-label"
                   >Select Your Country</label
                 >
+                <select name="" id="selectCountry" class="form-select">
+                  <option>Choose Your Country</option>
+                  <option value="mm">Myanmar</option>
+                  <option value="th">Thailand</option>
+                  <option value="ind">India</option>
+                </select>
+                <div class="valid-feedback">Look Good!</div>
+                <div class="invalid-feedback">Please, select your country.</div>
               </div>
+            </div>
+
+            <!--  -->
+            <div class="form-check form-switch mt-5">
+              <input
+                type="checkbox"
+                name=""
+                id="agree"
+                class="form-check-input"
+                checked
+              />
+
+              <label for="agree" class="form-check-label text-muted"
+                >I accept all of license what you wrote</label
+              >
+            </div>
+
+            <!--  -->
+            <div class="d-grid mt-4">
+              <button class="btn btn-primary" type="submit" id="reg">
+                Register
+              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
+    <!--  -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
