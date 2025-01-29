@@ -47,15 +47,15 @@ next.addEventListener("click", function () {
   if (!dd.done) {
     document.querySelector(".card").innerHTML = "";
     const html = `
-    <img src="${dd.value.url}" alt="" class="card-img" />
+            <img src="${dd.value.url}" alt="" class="card-img" />
               <div class="card-body">
-                <u class="list-group">
+                <ul class="list-group">
                   <li class="list-group-item">Name: Image 0${dd.value.id}</li>
                   <li class="list-group-item">
                     Title:  ${dd.value.title}
                   </li>
                   
-                </u>
+                </ul>
               </div>
     
     `;
